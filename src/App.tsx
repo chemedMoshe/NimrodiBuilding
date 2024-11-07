@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route index element={<Layout />} />
-        <Route path="floor/:index" element={<PrivateRoute component={<Floor />} />} />
+        <Route index  element={<Layout />} />
+        <Route path="floor/:index"   element={<PrivateRoute component={<Floor />} />} />
         <Route path="forbidden" element={<Forbidden />} />
       </Routes>
     </div>

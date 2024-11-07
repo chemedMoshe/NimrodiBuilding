@@ -14,7 +14,7 @@ const PrivateRoute = ({ component }: IPrivateRoute) => {
     const floorIndex = parseInt(index || "0");
     const isPermission: boolean = floorsPermission[floorIndex];
 
-    return isPermission ? component : <Navigate to={`/`}></Navigate>
+    return isPermission ? component : <Navigate to={`/forbidden`} ></Navigate>
 
 
 };
