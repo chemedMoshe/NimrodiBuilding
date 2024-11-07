@@ -11,14 +11,18 @@ const Reception: React.FC = () => {
   const floorAccess = useSelector(
     (state: { floorAccess: { floorAccess: boolean[] } }) => state.floorAccess.floorAccess
   );
-  
-  const currentRole = useSelector((state: { role: string }) => state.role);
+
+  const currentRole = useSelector(
+    (state: { role: { role: string } }) => state.role).role!;
+
+
   const { getFloorByIndex } = useBuildingData();
   const dispatch = useDispatch();
-  
+
   const handleChangeAccess = (index: number) => {
-    
+
     dispatch(changeAccess(index));
+
   };
 
   const handleSetRole = (index: number) => {
@@ -53,6 +57,7 @@ const Reception: React.FC = () => {
       <section className="role-selection">
         <h2>Select Role</h2>
         {optionalroles.map((role: string, index: number) => (
+
           <div
             key={index}
             onClick={() => handleSetRole(index)}
@@ -63,6 +68,7 @@ const Reception: React.FC = () => {
           >
             <h5>{role}</h5>
           </div>
+
         ))}
       </section>
     </div>
