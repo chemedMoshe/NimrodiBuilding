@@ -9,15 +9,14 @@ import { changeAccess, setRoleAccess } from "../../store/store";
 
 const Reception: React.FC = () => {
   const floorAccess = useSelector(
-    (state: { floorAccess: { floorAccess: [boolean, boolean, boolean, boolean, boolean] } }) => state.floorAccess.floorAccess
+    (state: { floorAccess: { floorAccess: boolean[] } }) => state.floorAccess.floorAccess
   );
+  
   const currentRole = useSelector((state: { role: string }) => state.role);
   const { getFloorByIndex } = useBuildingData();
   const dispatch = useDispatch();
-  const a = useSelector((state:any) => state.floorAccess.floorAccess);
-  console.log(a);
+  
   const handleChangeAccess = (index: number) => {
-    
     
     dispatch(changeAccess(index));
   };

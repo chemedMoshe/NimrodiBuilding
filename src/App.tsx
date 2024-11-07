@@ -4,7 +4,7 @@ import Layout from "./components/Layout/Layout";
 import Forbidden from "./pages/Forbidden/Forbidden";
 import useBuildingData from "./utils/BuildingDataProvider";
 import { Route, Routes } from "react-router-dom";
-import privateRoute from "./utils/PrivateRoute";
+import PrivateRoute from "./utils/PrivateRoute";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route index element={<Layout />} />
-        <Route path="floor/:index" element={<privateRoute component={<Floor />} />} />
+        <Route path="floor/:index" element={<PrivateRoute component={<Floor />} />} />
         <Route path="forbidden" element={<Forbidden />} />
       </Routes>
     </div>
