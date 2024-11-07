@@ -14,8 +14,11 @@ const Reception: React.FC = () => {
   const currentRole = useSelector((state: { role: string }) => state.role);
   const { getFloorByIndex } = useBuildingData();
   const dispatch = useDispatch();
-
+  const a = useSelector((state:any) => state.floorAccess.floorAccess);
+  console.log(a);
   const handleChangeAccess = (index: number) => {
+    
+    
     dispatch(changeAccess(index));
   };
 

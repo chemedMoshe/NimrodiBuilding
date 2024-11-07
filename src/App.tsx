@@ -13,7 +13,7 @@ function App() {
     <div className="App">
      <Routes>
         <Route index element={<Layout/>} />
-        <Route path="floor/:id" element={<PrivateRoute component={<Floor/>} />} /> 
+        <Route path="floor/:index" element={<PrivateRoute component={<Floor/>} />} /> 
         <Route path="forbidden" element={<Forbidden />} />
       </Routes>
     </div>

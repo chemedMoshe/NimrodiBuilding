@@ -10,7 +10,7 @@ interface Floor {
 }
 
 const useBuildingData = () => {
-  const [buildingData, setBuildingData] = useState<Floor[]>([]);
+  const [buildingData, setBuildingData] = useState<Floor[]>(lostRole);
  useEffect(() => {
    
    setBuildingData(lostRole as unknown as Floor[]);
