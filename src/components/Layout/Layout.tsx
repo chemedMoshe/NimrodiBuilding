@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useBuildingData from "../../utils/BuildingDataProvider";
 import "./Layout.css";
+import Reception from "../../pages/Reception/Reception";
 
 const Layout: React.FC = () => {
   const floorAccess = useSelector(
@@ -27,9 +28,9 @@ const Layout: React.FC = () => {
           ))}
         </div>
       </nav>
-
       <Outlet />
-
+      <Reception />
+        
       <footer className="layout-footer">
         <h2>About מגדל נמרודי</h2>
         <p>
