@@ -1,26 +1,24 @@
 import { ReactNode, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 
 interface IPrivateRoute {
     component: ReactNode,
 }
 
-const PrivateRoute = ({ component }: IPrivateRoute) => {
+const privateRoute = ({ component }: IPrivateRoute) => {
     const floorsPermission: boolean[] = useSelector((state:
         { floorAccess: { floorAccess: boolean[] } }) => state.floorAccess.floorAccess);
 
     const navigate = useNavigate();
     const { index } = useParams<{ index: string }>();
     const floorIndex = parseInt(index || "0");
-    
-        const isPermission: boolean = floorsPermission[floorIndex];
 
-        !isPermission ? navigate(`/`) : component
-   
+    const isPermission: boolean = floorsPermission[floorIndex];
 
-    return component
+    return !isPermission ? component : <Navigate to={`/`}></Navigate>
+
 
 };
 
-export default PrivateRoute
+export default privateRoute
