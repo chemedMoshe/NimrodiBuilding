@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { floorSlice } from "./floorreducer";
-import { roleReduser } from "./rolereducer";
+import  {roleReduser}  from './rolereducer';
 
 export default configureStore({
     reducer: {

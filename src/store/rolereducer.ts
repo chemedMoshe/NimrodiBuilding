@@ -1,5 +1,6 @@
 import {  createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Role } from "../Types/RoleModel";
+import roleList from '../data/roles.json'
 
 export const roleReduser  = createSlice({
     name: "role",
@@ -7,8 +8,8 @@ export const roleReduser  = createSlice({
         role: Role.UnknownPersonnel
     },
     reducers: {
-        setRoleAccess: (state, action: PayloadAction<Role>) => {
-            state.role = action.payload;
+        setRoleAccess: (state, action: PayloadAction<number>) => {
+            state.role =roleList[action.payload] as Role;
         },
     },
 });
