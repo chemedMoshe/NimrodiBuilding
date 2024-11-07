@@ -1,24 +1,24 @@
 import { useState, useEffect } from 'react';
-
+import lostRole from '../data/roles.json';
+import { set } from 'mongoose';
 interface Floor {
   name: string;
   soldiers: number;
   purpose: string;
   description: string;
-  activity:string
+  activity: string
 }
 
 const useBuildingData = () => {
   const [buildingData, setBuildingData] = useState<Floor[]>([]);
 
-  //FILL HERE LOGIC TO SET THE BUILDING DATA
+  setBuildingData(lostRole as unknown as Floor[]);
 
 
-  const getFloorByIndex = (floorIndex:number): Floor |undefined =>
-  {
-    //FILL HERE
+  const getFloorByIndex = (floorIndex: number): Floor | undefined => {
+    return lostRole[floorIndex] as unknown as Floor
   }
-  const getListOfActivities = ():string[]=>{
+  const getListOfActivities = (): string[] => {
     //FILL HERE
   }
   return {

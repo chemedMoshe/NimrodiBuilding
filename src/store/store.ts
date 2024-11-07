@@ -9,8 +9,11 @@ export default configureStore({
     }
 })
 
-export const { setRoleAccess,
-     changeAccess } = 
+export const {
+     setRoleAccess,
+    changeAccess 
+} =
 {
-     ...roleReduser.actions,
-      ...floorSlice.actions };
+    ...roleReduser.actions,
+    ...floorSlice.actions
+};
